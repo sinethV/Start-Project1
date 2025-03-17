@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management</title>
+    <script src="js/main.js" defer></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .search-container {
+            margin: 20px 0;
+        }
+        .action-container {
+            margin: 20px 0;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search staff...">
+        <button onclick="searchStaff()">Search</button>
+    </div>
+
+    <div class="action-container">
+        <select id="actionSelect">
+            <option value="">Select Action</option>
+            <option value="promote">Promote</option>
+            <option value="demote">Demote</option>
+            <option value="updateSalary">Update Salary</option>
+        </select>
+        <button onclick="performAction()">Go</button>
+        <span id="selectedCount">0 of 6 selected</span>
+    </div>
+
+    <table id="staffTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>STAFFNO</th>
+                <th>NAME</th>
+                <th>POSITION</th>
+                <th>SALARY</th>
+                <th>BRANCH</th>
+            </tr>
+        </thead>
+        <tbody id="staffTableBody">
+            <!-- Staff data will be inserted here via JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

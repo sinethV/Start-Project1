@@ -1,0 +1,20 @@
+{% extends 'bases.html' %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+{% block content %}
+<h3>Buy the best computer</h3>
+<div class="row">
+    {% for comp_Array in comp_Array %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="/media/{{ comp_array.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{comp_Array.name}}</h5>
+                <p class="card-text">$ {{comp_Array.price}}</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>    
+    {% endfor %}
+</div>
+{% endblock %}
